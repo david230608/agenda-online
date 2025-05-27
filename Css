@@ -1,0 +1,82 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e6f4ea;
+  color: #14532d;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  color: #065f46;
+  margin-bottom: 2rem;
+}
+
+.painel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.calendario, .eventos {
+  background-color: #d1fae5;
+  border: 2px solid #10b981;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-data, .input-evento {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #6ee7b7;
+  font-size: 1rem;
+}
+
+.botao {
+  background-color: #059669;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.botao:hover {
+  background-color: #047857;
+}
+
+.subtitulo {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #065f46;
+}
+
+.mensagem {
+  color: #064e3b;
+}
+
+.lista-eventos {
+  list-style: none;
+  padding: 0;
+}
+
+.evento {
+  background-color: #bbf7d0;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: left;
+}
