@@ -1,60 +1,29 @@
-// index.jsx
-import React, { useState } from 'react';
-import './style.css';
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendário Verde</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="titulo">Calendário Verde 🌿</h1>
 
-export default function CalendarioOnline() {
-  const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
-  const [eventos, setEventos] = useState([]);
-  const [novoEvento, setNovoEvento] = useState('');
+    <div class="painel">
+      <div class="calendario">
+        <input type="date" id="data" class="input-data" />
+        <input type="text" id="titulo" placeholder="Digite o título do evento" class="input-evento" />
+        <button onclick="adicionarEvento()" class="botao">Agendar Evento</button>
+      </div>
 
-  const adicionarEvento = () => {
-    if (novoEvento.trim() !== '') {
-      setEventos([...eventos, { data: date, titulo: novoEvento }]);
-      setNovoEvento('');
-    }
-  };
-
-  return (
-    <div className="container">
-      <h1 className="titulo">Calendário Verde 🌿</h1>
-
-      <div className="painel">
-        <div className="calendario">
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            className="input-data"
-          />
-
-          <input
-            type="text"
-            placeholder="Digite o título do evento"
-            value={novoEvento}
-            onChange={(e) => setNovoEvento(e.target.value)}
-            className="input-evento"
-          />
-
-          <button onClick={adicionarEvento} className="botao">
-            Agendar Evento
-          </button>
-        </div>
-
-        <div className="eventos">
-          <h2 className="subtitulo">Eventos Agendados</h2>
-          {eventos.length === 0 ? (
-            <p className="mensagem">Nenhum evento agendado.</p>
-          ) : (
-            <ul className="lista-eventos">
-              {eventos.map((evento, index) => (
-                <li key={index} className="evento">
-                  <strong>{evento.data}:</strong> {evento.titulo}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+      <div class="eventos">
+        <h2 class="subtitulo">Eventos Agendados</h2>
+        <ul id="listaEventos" class="lista-eventos"></ul>
       </div>
     </div>
-  );
-}
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
