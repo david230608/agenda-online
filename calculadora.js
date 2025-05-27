@@ -1,17 +1,22 @@
-function inserir(valor) {
-  const display = document.getElementById('display');
-  display.value += valor;
-}
+function adicionarEvento() {
+  const dataInput = document.getElementById('data');
+  const tituloInput = document.getElementById('titulo');
+  const listaEventos = document.getElementById('listaEventos');
 
-function limpar() {
-  document.getElementById('display').value = '';
-}
+  const data = dataInput.value;
+  const titulo = tituloInput.value.trim();
 
-function calcular() {
-  const display = document.getElementById('display');
-  try {
-    display.value = eval(display.value);
-  } catch {
-    display.value = 'Erro';
+  if (data === '' || titulo === '') {
+    alert('Preencha a data e o título do evento!');
+    return;
   }
+
+  const li = document.createElement('li');
+  li.className = 'evento';
+  li.innerHTML = `<strong>${data}:</strong> ${titulo}`;
+  listaEventos.appendChild(li);
+
+  // Limpar os campos
+  dataInput.value = '';
+  tituloInput.value = '';
 }
